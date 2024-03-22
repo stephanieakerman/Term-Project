@@ -1,2 +1,2 @@
 # Term-Project-Teaming
-Group Project: Stephanie and Hazuri
+Group Project: Stephanie Akerman and Hazuri Dhillon
