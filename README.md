@@ -1,5 +1,5 @@
 # **Term-Project** 
-## *By: Stephanie Akerman*
+## *By: Stephanie Akerman and Hassan Enany*
 
 
 # **Project Proposal**
