@@ -37,7 +37,7 @@ async def speech_to_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         await update.message.reply_text(f"An error occurred: {e}")
 
 def main():
-    bot_token = "7110128418:AAFV-gIVQjdk0Vubm2aWy-Gpd01UIble5aU"
+    bot_token 
     application = Application.builder().token(bot_token).build()
 
     # Add command handlers
