@@ -6,7 +6,6 @@ client = OpenAI(api_key=API_KEY)
 # The file for the audio
 file_path = "Hello_Voice.mp3"
 
-# Perform Transcription 
 def transcribe_audio(file_path):
     try:
         with open(file_path, "rb") as audio_file:
@@ -19,7 +18,7 @@ def transcribe_audio(file_path):
     except Exception as e:
         return f"An error occurred: {e}"
 
-# Print the result
+# Result
 transcription = transcribe_audio(file_path)
 print("Transcription:")
 print(transcription)
