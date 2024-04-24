@@ -5,6 +5,7 @@ from openai import OpenAI
 from pathlib import Path
 from config import API_KEY, bot_token
 
+
 client = OpenAI(api_key=API_KEY)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -32,7 +33,7 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     # Parse the file name from file path
     downloaded_file = file_path.split("/")[-1]
  
-    # Now download the file using the URL
+    # Download the file using the URL
     await file.download_to_drive()
     try:
         with open(downloaded_file, "rb") as audio_file:
