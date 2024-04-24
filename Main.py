@@ -29,17 +29,19 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     file = await context.bot.get_file(file_id)
     file_path = file.file_path
     print(file_path)
-
+    # Parse the file name from file path
+    downloaded_file = file_path.split("/")[-1]
+ 
     # Now download the file using the URL
-    await file.download(file_path)
+    await file.download_to_drive()
     try:
-        with open(file_path, "rb") as audio_file:
+        with open(downloaded_file, "rb") as audio_file:
             transcript = client.audio.transcriptions.create(
                 model="whisper-1",
                 file=audio_file,
                 language="en"
             )
-            await update.message.reply_text("Transcription: " + transcript['text'])
+            await update.message.reply_text("Transcription: " + transcript.text)
     except Exception as e:
         await update.message.reply_text(f"An error occurred: {e}")
     finally:
