@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Project Evolution</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/instructions">User Instructions</a></li>
+            <li><a href="/project-evolution">Project Evolution</a></li>
+            <li><a href="/attribution">Attribution</a></li>
+            <li><a href="/results">Results</a></li>
+        </ul>
+    </nav>
+    <h1> The code behind the project </h1>
+    <p> We based our project in three main (.py) documents: <strong>'bot.py'</strong>, where you can find all the coding behind the bot; and <strong>'app.py'</strong>, where you can find all work related to the website; and <strong>'run.py'</strong>, which runs the combination of both Python scripts. 
+    </p>
+
+    <h3> The code behind the BOT (bot.py)</h3>
+    <img src="{{ url_for('static', filename='bot.png') }}" alt="part of bot.py script">
+    <p> 
+        This Python script combines the Telegram API and OpenAI API to create a bot. When the script is initialized, it sets up the OpenAI client using the API key provided. The script defines three main functions: start, handle_text, and handle_voice. The start function sends a welcome message to users, initiating the conversation with the bot. The handle_text function processes incoming text messages by using the OpenAI API to convert text into speech. The resulting speech file is then sent back to the user as a voice message. Any temporary files created during the process are removed after transmission. The handle_voice function manages incoming voice messages, downloading and transcribing them into text using the OpenAI API. The script's main() function configures the Telegram bot application, adding handlers for various message types and commands such as /start. 
+    </p>
+
+    <h3> The code behind the WEBSITE (app.py) </h3>
+    <img src="{{ url_for('static', filename='app.png') }}" alt="app.py script">
+    <p>This script is designed to set up a web application using Flask - a python web development framework. The script defines different URLs that users can visit to access different pages of the website. For instance, if you visit the main URL (home), you'll see the homepage, and if you go to '/about', you'll find a page that contains information about the project. Similarly, '/instructions' will take you to a page with user instructions, and so on. Each URL is linked to a function that tells Flask what to do when someone visits that URL. For example, when you visit the homepage, Flask calls the home() function, which tells it to render a template called 'index.html'. 
+
+        When you run this script, Flask starts a web server, enabling users to visit the website.
+    </p>
+    
+    <h3> The final code (run.py) </h3>
+    <img src="{{ url_for('static', filename='run.png') }}" alt="run.py script">
+    <p>This Python script is a combination of two previous scripts and uses the 'multiprocessing module' to run them. When you run this script, two processes will be initiated: one for the web application and another for the bot. Each process executes its own Python script (`app.py` for the website and `bot.py` for the bot).
+        Once both processes are started, they run independently. The website process displays the website to users while the bot process manages interactions with users, responding to their queries or commands.
+        To ensure that both processes are executed and completed properly before terminating, the script calls the `join()` method on each process. This guarantees that the script waits for both the website and bot processes to finish their tasks before exiting..
+    </p>
+    
+
+    <h1> How did we develop our project over time? </h1>
+    <p>
+Our project went through several significant phases during its development journey. First, we wanted to create a WhatsApp bot as it is our main source of communication. However, we faced unexpected limitations during the development process, it was required to create a Whatsapp Business account to create a bot. This posed a significant challenge, and so we decided to pivot our project towards Telegram, another widely used communication platform. 
+As we started to code Telegram's bot, we encountered new challenges, particularly with the responsiveness of our bot in its speech-to-text translation functionality. However, we identified the issues and resolved them (WHAT WAS THE ISSUE??). We refined our project, overcame the obstacles, and achieved its functionality to deliver a incredible user experience. 
+    </p>
+    <img src="{{ url_for('static', filename='whatsapp.jpg') }}" alt="Whatsapp and Telegram logos">
+</body>
+</html>
